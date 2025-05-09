@@ -1,0 +1,1020 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi Durga Ganjala - Design &amp; Development Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(120deg, #4f46e5 0%, #6366f1 50%, #818cf8 100%);
+        }
+        
+        /* Hero section styles */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float-around 15s infinite ease-in-out;
+        }
+        
+        @keyframes float-around {
+            0%, 100% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(5%, 5%);
+            }
+            50% {
+                transform: translate(0, 10%);
+            }
+            75% {
+                transform: translate(-5%, 5%);
+            }
+        }
+        
+        .hero-shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -100px;
+            animation-delay: 0s;
+        }
+        
+        .hero-shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -100px;
+            left: -50px;
+            animation-delay: -5s;
+        }
+        
+        .hero-shape-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 10%;
+            animation-delay: -10s;
+        }
+        
+        /* Animated background */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .animated-bg-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            filter: blur(60px);
+        }
+        
+        .shape-1 {
+            top: 20%;
+            left: 10%;
+            width: 500px;
+            height: 500px;
+            background: #a5b4fc;
+            animation: move-shape 25s infinite alternate;
+        }
+        
+        .shape-2 {
+            top: 60%;
+            right: 10%;
+            width: 400px;
+            height: 400px;
+            background: #818cf8;
+            animation: move-shape 20s infinite alternate-reverse;
+        }
+        
+        .shape-3 {
+            bottom: 10%;
+            left: 30%;
+            width: 300px;
+            height: 300px;
+            background: #6366f1;
+            animation: move-shape 15s infinite alternate;
+        }
+        
+        @keyframes move-shape {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, 50px);
+            }
+        }
+        
+        /* Typing animation */
+        .typing-container {
+            display: inline-block;
+        }
+        
+        .typing-text {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid #6366f1;
+            width: 0;
+            animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #6366f1 }
+        }
+        
+        /* Role text animation */
+        .role-text {
+            display: inline-block;
+            position: relative;
+        }
+        
+        .role-text::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #a5b4fc;
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+        
+        .role-text:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Profile image animation */
+        .profile-image-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-image {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .profile-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 15px;
+            left: 15px;
+            border-radius: 30px;
+            background: rgba(79, 70, 229, 0.2);
+            z-index: 1;
+        }
+        
+        /* Tech stack animation */
+        .tech-stack {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Scroll down animation */
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) translateX(-50%);
+            }
+            40% {
+                transform: translateY(-20px) translateX(-50%);
+            }
+            60% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+        }
+        
+        /* Navigation styles */
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        /* Animation Classes */
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-left.appear, .slide-in-right.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.-bottom-4{bottom:-1rem}.-left-4{left:-1rem}.-right-4{right:-1rem}.right-0{right:0px}.right-2{right:0.5rem}.top-0{top:0px}.top-1\/2{top:50%}.top-2{top:0.5rem}.z-10{z-index:10}.z-50{z-index:50}.mx-2{margin-left:0.5rem;margin-right:0.5rem}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-12{margin-bottom:3rem}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mr-3{margin-right:0.75rem}.mr-4{margin-right:1rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-square{aspect-ratio:1 / 1}.h-1{height:0.25rem}.h-10{height:2.5rem}.h-12{height:3rem}.h-2{height:0.5rem}.h-48{height:12rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-72{height:18rem}.h-8{height:2rem}.h-full{height:100%}.w-10{width:2.5rem}.w-12{width:3rem}.w-20{width:5rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-72{width:18rem}.w-8{width:2rem}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-4xl{max-width:56rem}.max-w-lg{max-width:32rem}.max-w-md{max-width:28rem}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-8{gap:2rem}.space-x-4 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1rem * var(--tw-space-x-reverse));margin-left:calc(1rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-6 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(1.5rem * var(--tw-space-x-reverse));margin-left:calc(1.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-8 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(2rem * var(--tw-space-x-reverse));margin-left:calc(2rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.rounded{border-radius:0.25rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-l-lg{border-top-left-radius:0.5rem;border-bottom-left-radius:0.5rem}.rounded-r-lg{border-top-right-radius:0.5rem;border-bottom-right-radius:0.5rem}.border{border-width:1px}.border-4{border-width:4px}.border-t{border-top-width:1px}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-indigo-400{--tw-border-opacity:1;border-color:rgb(129 140 248 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.bg-gray-200{--tw-bg-opacity:1;background-color:rgb(229 231 235 / var(--tw-bg-opacity, 1))}.bg-gray-50{--tw-bg-opacity:1;background-color:rgb(249 250 251 / var(--tw-bg-opacity, 1))}.bg-indigo-100{--tw-bg-opacity:1;background-color:rgb(224 231 255 / var(--tw-bg-opacity, 1))}.bg-indigo-50{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-indigo-700{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.bg-indigo-800{--tw-bg-opacity:1;background-color:rgb(55 48 163 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/10{background-color:rgb(255 255 255 / 0.1)}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-5xl{font-size:3rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-gray-300{--tw-text-opacity:1;color:rgb(209 213 219 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-gray-800{--tw-text-opacity:1;color:rgb(31 41 55 / var(--tw-text-opacity, 1))}.text-indigo-100{--tw-text-opacity:1;color:rgb(224 231 255 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-indigo-800{--tw-text-opacity:1;color:rgb(55 48 163 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-white\/70{color:rgb(255 255 255 / 0.7)}.text-white\/80{color:rgb(255 255 255 / 0.8)}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.opacity-50{opacity:0.5}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:-translate-y-1:hover{--tw-translate-y:-0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-gray-100:hover{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity, 1))}.hover\:bg-white\/20:hover{background-color:rgb(255 255 255 / 0.2)}.hover\:bg-opacity-90:hover{--tw-bg-opacity:0.9}.hover\:text-indigo-200:hover{--tw-text-opacity:1;color:rgb(199 210 254 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:underline:hover{-webkit-text-decoration-line:underline;text-decoration-line:underline}.hover\:opacity-90:hover{opacity:0.9}.hover\:shadow-xl:hover{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:border-indigo-500:focus{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:mb-0{margin-bottom:0px}.md\:mt-0{margin-top:0px}.md\:flex{display:flex}.md\:hidden{display:none}.md\:h-96{height:24rem}.md\:w-1\/2{width:50%}.md\:w-96{width:24rem}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:pl-12{padding-left:3rem}.md\:text-left{text-align:left}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1024px){.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}</style></head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">LDG</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link font-medium">Home</a>
+                <a href="#about" class="nav-link font-medium">About</a>
+                <a href="#skills" class="nav-link font-medium">Skills</a>
+                <a href="#projects" class="nav-link font-medium">Projects</a>
+                <a href="#contact" class="nav-link font-medium active">Contact</a>
+            </div>
+            
+            <!-- Mobile Navigation Toggle -->
+            <button id="menu-toggle" class="md:hidden text-gray-800 focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="py-2 font-medium">Home</a>
+                <a href="#about" class="py-2 font-medium">About</a>
+                <a href="#skills" class="py-2 font-medium">Skills</a>
+                <a href="#projects" class="py-2 font-medium">Projects</a>
+                <a href="#contact" class="py-2 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section hero-gradient">
+        <!-- Animated background shapes -->
+        <div class="animated-bg">
+            <div class="animated-bg-shape shape-1"></div>
+            <div class="animated-bg-shape shape-2"></div>
+            <div class="animated-bg-shape shape-3"></div>
+        </div>
+        
+        <!-- Decorative shapes -->
+        <div class="hero-shape hero-shape-1"></div>
+        <div class="hero-shape hero-shape-2"></div>
+        <div class="hero-shape hero-shape-3"></div>
+        
+        <div class="container mx-auto px-4 py-20 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 text-white mb-12 md:mb-0">
+                    <div class="slide-in-left appear">
+                        <span class="inline-block py-1 px-3 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
+                            Welcome to my portfolio
+                        </span>
+                        
+                        <h1 class="text-5xl md:text-6xl font-bold mb-6">
+                            <span class="block mb-2">Hi, I'm</span>
+                            <div class="typing-container">
+                                <span class="text-white block typing-text">Lakshmi Durga Ganjala</span>
+                            </div>
+                        </h1>
+                        
+                        <div class="flex flex-wrap gap-3 mb-6">
+                            <span class="role-text text-xl md:text-2xl font-medium">Designer</span>
+                            <span class="text-xl md:text-2xl font-medium opacity-50 mx-2">&amp;</span>
+                            <span class="role-text text-xl md:text-2xl font-medium">Developer</span>
+                        </div>
+                        
+                        <p class="text-white/80 text-lg mb-8 max-w-lg">
+                            I create stunning visual designs and transform them into responsive, 
+                            user-friendly websites and applications. Bridging the gap between 
+                            design and development.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#projects" class="bg-white text-indigo-600 px-6 py-3 rounded-lg font-medium hover:bg-opacity-90 transition-colors">
+                                View My Work
+                            </a>
+                            <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-lg font-medium hover:bg-white/20 transition-colors">
+                                Contact Me
+                            </a>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <div class="tech-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-js"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-react"></i>
+                            </div>
+                            <div class="tech-icon">
+                                <i class="fab fa-figma"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 flex justify-center slide-in-right appear">
+                    <div class="profile-image-container">
+                        <div class="profile-bg"></div>
+                        <div class="profile-image w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden border-4 border-white/20 backdrop-blur-sm shadow-xl">
+                            <svg class="w-full h-full text-indigo-100" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14.25c4.142 0 7.5-3.358 7.5-7.5S16.142 0 12 0 4.5 3.358 4.5 7.5s3.358 7.5 7.5 7.5zm0 1.5C7.313 15.75 0 18.817 0 23.25V24h24v-.75c0-4.433-7.313-7.5-12-7.5z"></path>
+                            </svg>
+                        </div>
+                        
+                        <!-- Floating badges -->
+                        <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-full shadow-lg pulse">
+                            <div class="gradient-bg rounded-full p-3">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-white p-3 rounded-lg shadow-lg float">
+                            <div class="text-indigo-600 font-bold">5+ Years</div>
+                            <div class="text-xs text-gray-500">Experience</div>
+                        </div>
+                        
+                        <div class="absolute top-0 right-0 transform -translate-y-1/2 bg-white p-3 rounded-lg shadow-lg float" style="animation-delay: 1s">
+                            <div class="flex items-center">
+                                <div class="flex">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                    <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="text-xs text-gray-500">Top Rated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll down indicator -->
+        <div class="scroll-down text-white">
+            <a href="#about" class="flex flex-col items-center">
+                <span class="text-sm mb-2">Scroll Down</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <div class="relative">
+                        <div class="w-full max-w-md mx-auto rounded-lg overflow-hidden shadow-xl">
+                            <svg class="w-full aspect-square text-gray-300 bg-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+                            </svg>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 gradient-bg p-4 rounded-lg shadow-lg">
+                            <p class="text-white font-medium">5+ Years Experience</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-4">Designer &amp; Developer</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm Lakshmi Durga Ganjala, a passionate designer and developer with expertise in creating 
+                        beautiful user interfaces and translating them into functional websites 
+                        and applications. My unique blend of creative and technical skills allows 
+                        me to bridge the gap between design and development.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        With a strong foundation in UI/UX design principles and front-end 
+                        development technologies, I create digital experiences that are not only 
+                        visually stunning but also intuitive and user-friendly.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i class="fas fa-paint-brush text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">UI/UX Design</h4>
+                                <p class="text-sm text-gray-600">Creating intuitive interfaces</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-3">
+                                <i class="fas fa-code text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Web Development</h4>
+                                <p class="text-sm text-gray-600">Building responsive websites</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">My Skills</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Design Skills -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-4">
+                            <i class="fas fa-paint-brush text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Design Skills</h3>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">UI/UX Design</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Adobe Illustrator</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Photoshop</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Figma</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Wireframing</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">UI/UX Design</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Adobe Creative Suite</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">Figma</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Development Skills -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-4">
+                            <i class="fas fa-code text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Development Skills</h3>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">HTML</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">CSS</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Bootstrap</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">Tailwind CSS</span>
+                        <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-medium">WordPress</span>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">HTML/CSS</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">CSS Frameworks</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="font-medium">WordPress</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="gradient-bg h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">My Projects</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Here are some of my recent projects that showcase my skills in both design and development.
+                </p>
+            </div>
+            
+            <!-- Project Filter -->
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="filter-btn active px-5 py-2 text-sm font-medium bg-indigo-600 text-white rounded-l-lg" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="filter-btn px-5 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-100" data-filter="design">
+                        Design
+                    </button>
+                    <button type="button" class="filter-btn px-5 py-2 text-sm font-medium bg-white text-gray-700 hover:bg-gray-100 rounded-r-lg" data-filter="development">
+                        Development
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-1" data-category="design">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm0 2v14h14V5H5zm8.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 4.5c1.25 0 3.5.75 3.5 2.25V15H10v-1.25c0-1.5 2.25-2.25 3.5-2.25z"></path>
+                        </svg>
+                        <div class="absolute top-2 right-2 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            UI/UX Design
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">E-commerce Website Redesign</h3>
+                        <p class="text-gray-600 mb-4">
+                            Redesigned the user interface for an e-commerce platform, improving user experience and increasing conversion rates.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Figma</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">UI/UX</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Wireframing</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-1" data-category="development">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm0 2v14h14V5H5zm8.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 4.5c1.25 0 3.5.75 3.5 2.25V15H10v-1.25c0-1.5 2.25-2.25 3.5-2.25z"></path>
+                        </svg>
+                        <div class="absolute top-2 right-2 bg-indigo-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Web Development
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Portfolio Website</h3>
+                        <p class="text-gray-600 mb-4">
+                            Developed a responsive portfolio website for a photographer using modern web technologies.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Tailwind CSS</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">View Project</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition-all hover:shadow-xl hover:-translate-y-1" data-category="design development">
+                    <div class="relative h-48 bg-gray-200 overflow-hidden">
+                        <svg class="w-full h-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2zm0 2v14h14V5H5zm8.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm0 4.5c1.25 0 3.5.75 3.5 2.25V15H10v-1.25c0-1.5 2.25-2.25 3.5-2.25z"></path>
+                        </svg>
+                        <div class="absolute top-2 right-2 bg-indigo-800 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            Design &amp; Development
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
+                        <p class="text-gray-600 mb-4">
+                            Designed and developed a complete website for a local restaurant, including online ordering system.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">WordPress</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Elementor</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">UI Design</span>
+                        </div>
+                        <a href="#" class="text-indigo-600 font-medium hover:underline">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-2">Get In Touch</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">
+                    Have a project in mind or want to collaborate? Feel free to contact me.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2">
+                        <!-- Contact Information -->
+                        <div class="gradient-bg p-8 text-white">
+                            <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                                        <i class="fas fa-envelope text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white/70 text-sm">Email</h4>
+                                        <p class="font-medium">lakshmidurga@example.com</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                                        <i class="fas fa-phone text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white/70 text-sm">Phone</h4>
+                                        <p class="font-medium">+1 (123) 456-7890</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mr-4">
+                                        <i class="fas fa-map-marker-alt text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-white/70 text-sm">Location</h4>
+                                        <p class="font-medium">New York, NY, USA</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <h4 class="text-xl font-semibold mb-4">Connect With Me</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                        <i class="fab fa-dribbble"></i>
+                                    </a>
+                                    <a href="#" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
+                                        <i class="fab fa-behance"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Form -->
+                        <div class="p-8">
+                            <form id="contact-form" class="space-y-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required="">
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required="">
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                    <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required="">
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                    <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" required=""></textarea>
+                                </div>
+                                
+                                <button type="submit" class="w-full gradient-bg text-white py-3 px-6 rounded-lg font-medium hover:opacity-90 transition-opacity">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-2xl font-bold">Lakshmi Durga Ganjala</h2>
+                    <p class="text-indigo-100">Designer &amp; Developer</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-indigo-200 transition-colors">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-indigo-200 transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-indigo-200 transition-colors">
+                        <i class="fab fa-dribbble text-xl"></i>
+                    </a>
+                    <a href="#" class="hover:text-indigo-200 transition-colors">
+                        <i class="fab fa-behance text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-indigo-400 mt-6 pt-6 text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p>© 2023 Lakshmi Durga Ganjala. All rights reserved.</p>
+                    <div class="mt-4 md:mt-0">
+                        <a href="#" class="text-indigo-100 hover:text-white mr-4">Privacy Policy</a>
+                        <a href="#" class="text-indigo-100 hover:text-white">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Active Navigation Link
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Project Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('[data-category]');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active', 'bg-indigo-600', 'text-white'));
+                filterBtns.forEach(b => b.classList.add('bg-white', 'text-gray-700'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active', 'bg-indigo-600', 'text-white');
+                btn.classList.remove('bg-white', 'text-gray-700');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // In a real application, you would send the form data to a server
+            // For this demo, we'll just simulate a successful submission
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Show success message (in a real app)
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+        
+        // Animation on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('appear');
+                }
+            });
+        }
+        
+        // Run animation on load and scroll
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93c01ceb11182e99',t:'MTc0NjYxNDU3Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: none; visibility: hidden;"></iframe>
+</body></html>
